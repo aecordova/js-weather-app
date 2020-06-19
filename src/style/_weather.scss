@@ -1,0 +1,9 @@
+$background: #808080;
+
+body{
+  height: 100%;
+  // background-image: url('../img/blur-rain.jpg');
+  background-color: $background;
+  display: grid;
+  grid-template-columns: 5%, 1fr ,5%;
+}
