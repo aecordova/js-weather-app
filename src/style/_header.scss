@@ -15,6 +15,7 @@ header{
 }
 
 .search-inp {
+  font-family: Dosis;
   color: $text-icons;
   background-color: transparent;
   outline: none;
@@ -26,7 +27,7 @@ header{
 
 .search-inp::placeholder{
   color: $primary-light;
-  font-style: italic;
+  font-family: Dosis;
   font-size: smaller;
 }
 

@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700;800&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Weather</title>
   </head>
   <body>
     <header>
       <form class="search-frm">
-        <input class="search-inp" type="text" placeholder="Enter city name..." />
+        <input
+          class="search-inp"
+          type="text"
+          placeholder="Enter city name..."
+        />
         <button type="submit" class="search-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +40,34 @@
     </header>
     <main>
       <div class="weather-container">
-        
-    </div>
+        <div class="disp">
+          <div class="disp-city">
+            <span>Monterrey, MX</span>
+          </div>
+          <div class="disp-temp temp-unit">35</div>
+          <div class="disp-icon">Icon</div>
+          <div class="disp-desc">
+            <span>Scattered Clouds</span>
+          </div>
+          <div>
+            <div class="disp-stat">
+              <div>
+                <span class="stat-lbl">Feels like:</span>
+                <span class="disp-fls temp-unit">37</span>
+              </div>
+              <div>
+                <span class="stat-lbl">Min:</span>
+                <span class="disp-min temp-unit">30</span>
+              </div>
+              <div>
+                <span class="stat-lbl">Max:</span>
+                <span class="disp-max temp-unit">40</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer>footer</footer>
+    <footer>footer <br><br><br>foter</footer>
   </body>
 </html>
