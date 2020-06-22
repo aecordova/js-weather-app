@@ -8,7 +8,6 @@
   border-radius: 25px;
 }
 
-
 .temp-container {
   display: flex;
   align-items: center;
@@ -28,7 +27,7 @@
   width: 6rem;
   bottom: 0;
   right: 0;
-  background: rgba($color: #757575, $alpha: .8) url('https://openweathermap.org/img/wn/02d@4x.png') center center / cover no-repeat;
+  background: rgba($color: #757575, $alpha: .8) url('') center center / cover no-repeat;
 }
 
 .temp-unit {
@@ -44,6 +43,7 @@
   font-family: 'Open Sans';
   text-align: center;
   padding: 10px;
+  text-transform: capitalize;
 }
 
 .disp-stat {
@@ -62,7 +62,7 @@
 }
 
 .stat-lbl {
-  font-size: x-small;
+  font-size: small;
   font-family: 'Dosis';
   margin-right: 5px;
 }
