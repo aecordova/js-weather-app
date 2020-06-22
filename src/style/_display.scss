@@ -5,43 +5,64 @@
 .disp {
   display: flex;
   flex-direction: column;
-  // background-color: rgba($color: #000000, $alpha: .5);
   border-radius: 25px;
 }
 
-.disp-city{
-  text-align: center;
+
+.temp-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .disp-temp {
-  font-family: 'Dosis', sans-serif;
+  color: $primary-text;
+  display: block;
+  font-size: 5rem;
+  line-height: 6rem;
+}
+
+.disp-icon {
+  border-radius: 25px;
+  height: 5rem;
+  width: 6rem;
+  bottom: 0;
+  right: 0;
+  background: rgba($color: #757575, $alpha: .8) url('https://openweathermap.org/img/wn/02d@4x.png') center center / cover no-repeat;
+}
+
+.temp-unit {
+  font-family: "Dosis", sans-serif;
   font-weight: 700;
-  text-align: center;
-  font-size: 8rem;
-  line-height: 8rem;
 }
 
-.disp-icon{
-  
+.temp-unit::after {
+  content: "º";
 }
 
-.temp-unit::after{
-  content: 'º';
-}
-
-.disp-desc{
+.disp-desc, .disp-city {
+  font-family: 'Open Sans';
   text-align: center;
   padding: 10px;
 }
 
 .disp-stat {
   display: flex;
+  padding: 10px;
+  border-radius: 25px;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  align-items: center;
+  background-color: $secondary-text;
 }
 
-.stat-lbl{
-  font-size: smaller;
+.disp-stat > * {
+  display: flex;
+  align-items: center;
+}
+
+.stat-lbl {
+  font-size: x-small;
+  font-family: 'Dosis';
   margin-right: 5px;
 }
-
