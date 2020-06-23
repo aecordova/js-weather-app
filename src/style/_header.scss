@@ -34,9 +34,12 @@ header{
 }
 
 .search-inp:hover ~ .search-btn, 
-.search-inp:focus ~ .search-btn{ 
-  background-color: $primary-light;
+.search-inp:focus ~ .search-btn,
+.search-btn:hover { 
+  background-color: $primary-light !important;
+  color: $divider;
 } 
+
 
 .search-btn {
   border-radius: 50%;
@@ -51,14 +54,11 @@ header{
 }
 
 .search-btn-icon{
-  color: $primary;
+  color: $primary-dark;
   height: 2em;
   width: 2em;
 }
 
-.search-btn:hover {
-  background-color: $primary-light;
-}
 
 .expand-caret {
   text-align: center;
@@ -68,10 +68,6 @@ header{
     height: 15px;
     color: $divider;
   }
-}
-
-.expand-caret:hover svg{
-  color: $accent;
 }
 
 .fold {
