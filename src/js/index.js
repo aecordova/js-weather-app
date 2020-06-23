@@ -12,6 +12,40 @@ const minDisplay = document.querySelector('.disp-min');
 const maxDisplay = document.querySelector('.disp-max');
 const wIcon = document.querySelector('.disp-icon');
 const header = document.querySelector('header');
+const welcome = document.querySelector('.welcome');
+const display = document.querySelector('.main-display');
+
+const toggleFoldHeader = () => {
+  header.classList.toggle('fold');
+  searchForm.classList.toggle('invisible');
+  searchInput.value = '';
+};
+
+const hide = (element) => {
+  if (
+    !(
+      element.classList.contains('invisible')
+      && element.classList.contains('d-none')
+    )
+  ) {
+    element.classList.add('invisible');
+    element.addEventListener('transitionend', () => {
+      element.classList.add('d-none');
+    });
+  }
+};
+
+const show = (element) => {
+  if (
+    element.classList.contains('invisible')
+    && element.classList.contains('d-none')
+  ) {
+    element.classList.remove('d-none');
+    setTimeout(() => {
+      element.classList.remove('invisible');
+    }, 600);
+  }
+};
 
 const displayWeather = async (city) => {
   const w = await getW(city);
@@ -22,6 +56,9 @@ const displayWeather = async (city) => {
   minDisplay.textContent = Math.trunc(w.data.temp.temp_min);
   maxDisplay.textContent = Math.trunc(w.data.temp.temp_max);
   wIcon.style.backgroundImage = `url(${w.icon})`;
+  toggleFoldHeader();
+  hide(welcome);
+  show(display);
 };
 
 searchForm.addEventListener('submit', (e) => {
@@ -32,7 +69,6 @@ searchForm.addEventListener('submit', (e) => {
 
 const expand = document.querySelector('.expand-caret');
 
-expand.addEventListener('click', () => {
-  header.classList.toggle('fold');
-  searchForm.classList.toggle('invisible');
-});
+expand.addEventListener('click', ()=>{
+  toggleFoldHeader();
+} );

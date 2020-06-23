@@ -36,13 +36,11 @@ main {
 }
 
 .invisible {
-  opacity: 0 !important;
-  // transition: all 3s ease;
+  opacity: 0;
 }
 
 .h-0 {
   height: 0;
-  // transition: all 3s ease;
 }
 
 .p-0{

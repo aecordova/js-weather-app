@@ -1,11 +1,12 @@
 
 .welcome {
   text-align: center;
-  
+  transition: opacity .5s ease-in-out;
 }
 
-.weather-container {
+.main-display {
   padding: 10px;
+  transition: opacity .5s ease-in-out;
 }
 
 .disp {
