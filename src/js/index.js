@@ -11,6 +11,7 @@ const feelsDisplay = document.querySelector('.disp-fls');
 const minDisplay = document.querySelector('.disp-min');
 const maxDisplay = document.querySelector('.disp-max');
 const wIcon = document.querySelector('.disp-icon');
+const header = document.querySelector('header');
 
 const displayWeather = async (city) => {
   const w = await getW(city);
@@ -21,11 +22,17 @@ const displayWeather = async (city) => {
   minDisplay.textContent = Math.trunc(w.data.temp.temp_min);
   maxDisplay.textContent = Math.trunc(w.data.temp.temp_max);
   wIcon.style.backgroundImage = `url(${w.icon})`;
-  console.log(w.icon);
 };
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const cityName = searchInput.value.toLowerCase();
   displayWeather(cityName);
+});
+
+const expand = document.querySelector('.expand-caret');
+
+expand.addEventListener('click', () => {
+  header.classList.toggle('fold');
+  searchForm.classList.toggle('invisible');
 });

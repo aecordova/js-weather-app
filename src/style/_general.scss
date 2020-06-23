@@ -31,3 +31,21 @@ main {
   grid-column: 2 / 3;
 }
 
+.d-none {
+  display: none !important;
+}
+
+.invisible {
+  opacity: 0 !important;
+  // transition: all 3s ease;
+}
+
+.h-0 {
+  height: 0;
+  // transition: all 3s ease;
+}
+
+.p-0{
+  padding: 0;
+}
+

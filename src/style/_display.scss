@@ -11,14 +11,14 @@
 .temp-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .disp-temp {
   color: $primary-text;
   display: block;
-  font-size: 5rem;
-  line-height: 6rem;
+  font-size: 8rem;
+  line-height: 7rem;
 }
 
 .disp-icon {
@@ -27,7 +27,10 @@
   width: 6rem;
   bottom: 0;
   right: 0;
-  background: rgba($color: #757575, $alpha: .8) url('') center center / cover no-repeat;
+  background: rgba($color: #757575, $alpha: 0.8) center center / cover no-repeat;
+  -webkit-box-shadow: 8px 13px 13px -2px rgba(0,0,0,0.4);
+  -moz-box-shadow: 8px 13px 13px -2px rgba(0,0,0,0.4);
+  box-shadow: 8px 13px 13px -2px rgba(0,0,0,0.4);
 }
 
 .temp-unit {
@@ -39,8 +42,9 @@
   content: "º";
 }
 
-.disp-desc, .disp-city {
-  font-family: 'Open Sans';
+.disp-desc,
+.disp-city {
+  font-family: "Open Sans";
   text-align: center;
   padding: 10px;
   text-transform: capitalize;
@@ -63,6 +67,6 @@
 
 .stat-lbl {
   font-size: small;
-  font-family: 'Dosis';
+  font-family: "Dosis";
   margin-right: 5px;
 }

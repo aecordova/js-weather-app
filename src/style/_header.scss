@@ -1,17 +1,19 @@
 
 header{
   background-color: $primary;
-  padding: 1em;
-  display: flex;
-  justify-content: center;
+  padding: 5px;
+  transition: transform .5s ease-in-out;
 }
 
 .search-frm {
   display: flex;
+  margin: 0 auto;
   padding: 4px 4px;
   width: fit-content;
   border-radius: 25px;
   border: solid 1px $divider;
+  overflow: hidden;
+  transition: opacity .5s ease-in-out;
 }
 
 .search-inp {
@@ -56,4 +58,46 @@ header{
 
 .search-btn:hover {
   background-color: $primary-light;
+}
+
+.expand-caret {
+  text-align: center;
+  padding-top: 5px;
+  line-height: 15px;
+  svg {
+    height: 15px;
+    color: $divider;
+  }
+}
+
+.expand-caret:hover svg{
+  color: $accent;
+}
+
+.fold {
+  transform: translate(0, -65%)
+}
+
+.wobble-y:hover, .wobble-y:focus, .wobble-y:active {
+  -webkit-animation-name: wobble-y;
+  animation-name: wobble-y;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+@keyframes wobble-y {
+  25% {
+    transform:translateY(-4px);
+  }
+  50% {
+    transform:translateY(4px);
+  }
+  100% {
+    transform:translate(0px);
+  }
 }
