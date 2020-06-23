@@ -4,15 +4,33 @@
   transition: opacity .5s ease-in-out;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.main-logo {
+  height: 2em;
+}
+
 .main-display {
   padding: 10px;
+  transform: translateY(-2.5em);
   transition: opacity .5s ease-in-out;
+  display: flex;
+  justify-content:center;
 }
 
 .disp {
   display: flex;
   flex-direction: column;
   border-radius: 25px;
+  max-width: 400px;
 }
 
 .temp-container {
@@ -24,7 +42,7 @@
 .disp-temp {
   color: $primary-text;
   display: block;
-  font-size: 8rem;
+  font-size: 6rem;
   line-height: 7rem;
 }
 

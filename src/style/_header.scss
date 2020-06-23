@@ -3,6 +3,7 @@ header{
   background-color: $primary;
   padding: 5px;
   transition: transform .5s ease-in-out;
+  z-index: 2;
 }
 
 .search-frm {
@@ -36,8 +37,8 @@ header{
 .search-inp:hover ~ .search-btn, 
 .search-inp:focus ~ .search-btn,
 .search-btn:hover { 
-  background-color: $primary-light !important;
-  color: $divider;
+  background-color: $divider !important;
+  // color: $divider;
 } 
 
 
@@ -54,24 +55,32 @@ header{
 }
 
 .search-btn-icon{
-  color: $primary-dark;
+  color: $primary;
   height: 2em;
   width: 2em;
 }
 
 
-.expand-caret {
+.expand-search-box {
   text-align: center;
   padding-top: 5px;
   line-height: 15px;
   svg {
-    height: 15px;
+    height: 20px;
     color: $divider;
   }
 }
 
+.expand-search {
+  transition: transform .5s ease-in-out;
+}
+
 .fold {
-  transform: translate(0, -65%)
+  transform: translate(0, -60%)
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 .wobble-y:hover, .wobble-y:focus, .wobble-y:active {

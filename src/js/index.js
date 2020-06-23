@@ -3,6 +3,7 @@ import getW from './getWeather';
 
 const searchForm = document.querySelector('.search-frm');
 const searchInput = document.querySelector('.search-inp');
+const searchToggle = document.querySelector('.expand-search');
 
 const cityDisplay = document.querySelector('.disp-city');
 const tempDisplay = document.querySelector('.disp-temp');
@@ -19,15 +20,12 @@ const toggleFoldHeader = () => {
   header.classList.toggle('fold');
   searchForm.classList.toggle('invisible');
   searchInput.value = '';
+  searchToggle.classList.toggle('rotate');
+  searchToggle.classList.toggle('wobble-y');
 };
 
 const hide = (element) => {
-  if (
-    !(
-      element.classList.contains('invisible')
-      && element.classList.contains('d-none')
-    )
-  ) {
+  if (!(element.classList.contains('invisible') && element.classList.contains('d-none'))) {
     element.classList.add('invisible');
     element.addEventListener('transitionend', () => {
       element.classList.add('d-none');
@@ -67,8 +65,8 @@ searchForm.addEventListener('submit', (e) => {
   displayWeather(cityName);
 });
 
-const expand = document.querySelector('.expand-caret');
+const expand = document.querySelector('.expand-search-box');
 
-expand.addEventListener('click', ()=>{
+expand.addEventListener('click', () => {
   toggleFoldHeader();
-} );
+});
