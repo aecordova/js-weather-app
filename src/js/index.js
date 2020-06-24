@@ -30,12 +30,9 @@ const toggleFoldHeader = () => {
 const hide = (element) => {
   if (!(element.classList.contains('invisible') && element.classList.contains('d-none'))) {
     element.classList.add('invisible');
-    // element.addEventListener('transitionend', () => {
-    //   element.classList.add('d-none');
-    // });
     setTimeout(() => {
-        element.classList.add('d-none');
-      }, 600);
+      element.classList.add('d-none');
+    }, 600);
   }
 };
 

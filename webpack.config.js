@@ -1,12 +1,13 @@
 // eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const path = require('path');
 
 module.exports = {
   entry: './src/js/index.js',
   plugins: [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
