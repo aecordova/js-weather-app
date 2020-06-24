@@ -17,6 +17,7 @@ const welcome = document.querySelector('.welcome');
 const display = document.querySelector('.main-display');
 const fahRadio = document.getElementById('degFah');
 const expand = document.querySelector('.expand-search-box');
+const errorBox = document.querySelector('.errors');
 
 const toggleFoldHeader = () => {
   header.classList.toggle('fold');
@@ -29,9 +30,12 @@ const toggleFoldHeader = () => {
 const hide = (element) => {
   if (!(element.classList.contains('invisible') && element.classList.contains('d-none'))) {
     element.classList.add('invisible');
-    element.addEventListener('transitionend', () => {
-      element.classList.add('d-none');
-    });
+    // element.addEventListener('transitionend', () => {
+    //   element.classList.add('d-none');
+    // });
+    setTimeout(() => {
+        element.classList.add('d-none');
+      }, 600);
   }
 };
 
@@ -47,10 +51,15 @@ const show = (element) => {
   }
 };
 
+
 const displayWeather = async (city, units) => {
   const w = await getW(city, units);
   if (w.data.status === 'Error') {
-    console.log(w.data.msg);
+    errorBox.textContent = w.data.msg;
+    show(errorBox);
+    setTimeout(() => {
+      hide(errorBox);
+    }, 5000);
   } else {
     cityDisplay.textContent = [w.data.city, w.data.country].join(', ');
     tempDisplay.textContent = Math.trunc(w.data.temp.temp);

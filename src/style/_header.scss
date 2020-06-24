@@ -4,8 +4,18 @@ header{
   padding: 5px;
   transition: transform .5s ease-in-out;
   z-index: 2;
+  position: relative;
 }
-
+.errors {
+  position:absolute;
+  font-size: xx-small;
+  color: red;
+  bottom: -30%;
+  width: 50%;
+  text-align: center;
+  right: 0;
+  transition: opacity .5s ease-in-out;
+}
 .search-frm {
   display: flex;
   padding: 4px 4px;
