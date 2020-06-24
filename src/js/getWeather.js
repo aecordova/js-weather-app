@@ -3,11 +3,11 @@ const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 const buildRequest = (city, units = 'metric') => [BASE_URL, `?q=${city}`, `&units=${units}`, `&appid=${APIKEY}`].join('');
 const handleError = (response) => {
-  let msg;
+  let msg = 'Error - ';
   if (response.status === 404) {
-    msg = 'Could not find a city with that name...';
+    msg += 'Could not find a city with that name...';
   } else {
-    msg = response.statusText;
+    msg += response.statusText;
   }
   throw new Error(msg);
 };
@@ -35,14 +35,22 @@ const getWeatherData = async (city, units = 'metric') => {
       return r.json();
     })
     .then((d) => ({
+      status: 'OK',
       city: d.name,
       country: d.sys.country,
       weather: d.weather,
       temp: d.main,
     }))
-    .catch((e) => e.message);
+    .catch((e) => ({
+      status: 'Error',
+      msg: e.message,
+    }));
 
-  const icon = await getIcon(data.weather[0].icon);
+  let icon = null;
+
+  if (data.status === 'OK') {
+    icon = await getIcon(data.weather[0].icon);
+  }
 
   return { data, icon };
 };

@@ -15,6 +15,8 @@ const wIcon = document.querySelector('.disp-icon');
 const header = document.querySelector('header');
 const welcome = document.querySelector('.welcome');
 const display = document.querySelector('.main-display');
+const fahRadio = document.getElementById('degFah');
+const expand = document.querySelector('.expand-search-box');
 
 const toggleFoldHeader = () => {
   header.classList.toggle('fold');
@@ -45,27 +47,30 @@ const show = (element) => {
   }
 };
 
-const displayWeather = async (city) => {
-  const w = await getW(city);
-  cityDisplay.textContent = [w.data.city, w.data.country].join(', ');
-  tempDisplay.textContent = Math.trunc(w.data.temp.temp);
-  descDisplay.textContent = w.data.weather[0].description;
-  feelsDisplay.textContent = Math.trunc(w.data.temp.feels_like);
-  minDisplay.textContent = Math.trunc(w.data.temp.temp_min);
-  maxDisplay.textContent = Math.trunc(w.data.temp.temp_max);
-  wIcon.style.backgroundImage = `url(${w.icon})`;
-  toggleFoldHeader();
-  hide(welcome);
-  show(display);
+const displayWeather = async (city, units) => {
+  const w = await getW(city, units);
+  if (w.data.status === 'Error') {
+    console.log(w.data.msg);
+  } else {
+    cityDisplay.textContent = [w.data.city, w.data.country].join(', ');
+    tempDisplay.textContent = Math.trunc(w.data.temp.temp);
+    descDisplay.textContent = w.data.weather[0].description;
+    feelsDisplay.textContent = Math.trunc(w.data.temp.feels_like);
+    minDisplay.textContent = Math.trunc(w.data.temp.temp_min);
+    maxDisplay.textContent = Math.trunc(w.data.temp.temp_max);
+    wIcon.style.backgroundImage = `url(${w.icon})`;
+    toggleFoldHeader();
+    hide(welcome);
+    show(display);
+  }
 };
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const cityName = searchInput.value.toLowerCase();
-  displayWeather(cityName);
+  const units = fahRadio.checked ? 'imperial' : 'metric';
+  displayWeather(cityName, units);
 });
-
-const expand = document.querySelector('.expand-search-box');
 
 expand.addEventListener('click', () => {
   toggleFoldHeader();

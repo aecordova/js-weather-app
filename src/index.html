@@ -12,41 +12,80 @@
   </head>
   <body>
     <header class="fold">
-      <form class="search-frm invisible">
-        <input
-          class="search-inp"
-          type="text"
-          placeholder="Enter city name..."
-        />
-        <button type="submit" class="search-btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-arrow-right-circle search-btn-icon"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 16 16 12 12 8"></polyline>
-            <line x1="8" y1="12" x2="16" y2="12"></line>
-          </svg>
-        </button>
-      </form>
+      <div class="form-container">
+        <form class="search-frm invisible">
+          <input
+            class="search-inp"
+            type="text"
+            placeholder="Enter city name..."
+          />
+          <button type="submit" class="search-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-arrow-right-circle search-btn-icon"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 16 16 12 12 8"></polyline>
+              <line x1="8" y1="12" x2="16" y2="12"></line>
+            </svg>
+          </button>
+        </form>
+        <div class="units">
+          <div class="input-group">
+            <input type="radio" name="degScale" id="degCel" checked="checked" />
+            <label for="degCel">ºC</label>
+          </div>
+          <div class="input-group">
+            <input type="radio" name="degScale" id="degFah" />
+            <label for="degFah">ºF</label>
+          </div>
+        </div>
+      </div>
       <div class="expand-search-box">
-        <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wobble-y expand-search feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="wobble-y expand-search feather feather-arrow-down-circle"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="8 12 12 16 16 12"></polyline>
+          <line x1="12" y1="8" x2="12" y2="16"></line>
+        </svg>
       </div>
     </header>
     <main>
-      <div class="welcome"><h1 class="brand"><?xml version="1.0" encoding="utf-8"?>
-        <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="main-logo" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-           viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-        <path d="M0.45,20.97c0,0.24,0.08,0.45,0.24,0.61c0.44,0.18,0.73,0.27,0.88,0.27h7.88c0.24,0,0.44-0.09,0.6-0.26
+      <div class="welcome">
+        <h1 class="brand">
+          <?xml version="1.0" encoding="utf-8"?>
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            class="main-logo"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 30 30"
+            style="enable-background: new 0 0 30 30;"
+            xml:space="preserve"
+          >
+            <path
+              d="M0.45,20.97c0,0.24,0.08,0.45,0.24,0.61c0.44,0.18,0.73,0.27,0.88,0.27h7.88c0.24,0,0.44-0.09,0.6-0.26
           c0.17-0.17,0.25-0.38,0.25-0.61c0-0.23-0.08-0.43-0.25-0.59c-0.17-0.16-0.37-0.24-0.6-0.24H1.57c-0.26,0-0.52,0.08-0.76,0.24
           C0.57,20.55,0.45,20.75,0.45,20.97z M1.84,17.97c0,0.24,0.08,0.43,0.25,0.59c0.15,0.17,0.34,0.26,0.58,0.26h9.4
           c0.24,0,0.44-0.08,0.61-0.25c0.17-0.17,0.25-0.37,0.25-0.6c0-0.24-0.08-0.44-0.25-0.61c-0.17-0.17-0.37-0.25-0.61-0.25h-9.4
@@ -73,9 +112,30 @@
           c-0.19-0.17-0.4-0.26-0.65-0.26c-0.24,0-0.43,0.08-0.59,0.24C24.45,17.51,24.37,17.71,24.37,17.95z M25.81,11.63
           c0,0.24,0.09,0.45,0.27,0.61c0.18,0.17,0.38,0.25,0.6,0.25h2.03c0.23,0,0.42-0.08,0.59-0.25c0.17-0.17,0.25-0.37,0.25-0.61
           c0-0.22-0.08-0.41-0.24-0.57c-0.16-0.15-0.36-0.23-0.59-0.23h-2.03c-0.24,0-0.45,0.08-0.62,0.23C25.9,11.22,25.81,11.41,25.81,11.63
-          z"/>
+          z"
+            />
+          </svg>
+          WeatherApp
+        </h1>
+        <br />
+        To get started, please tap on the
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="wobble-y feather feather-arrow-down-circle"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="8 12 12 16 16 12"></polyline>
+          <line x1="12" y1="8" x2="12" y2="16"></line>
         </svg>
-         WeatherApp</h1><br> To get started, please tap on the         <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wobble-y feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg>  button above and search for a city!
+        button above and search for a city!
       </div>
       <div class="main-display d-none invisible">
         <div class="disp">
