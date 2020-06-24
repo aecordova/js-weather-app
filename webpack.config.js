@@ -1,8 +1,9 @@
+const path = require('path');
 // eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const path = require('path');
 
 module.exports = {
   entry: './src/js/index.js',
@@ -48,7 +49,8 @@ module.exports = {
               plugins() {
                 // postcss plugins, can be exported to postcss.config.js
                 return [
-                  // eslint-disable-next-line global-require
+                  // eslint-disable-next-line max-len
+                  // eslint-disable-next-line global-require,import/no-unresolved, import/no-extraneous-dependencies
                   require('autoprefixer'),
                 ];
               },
