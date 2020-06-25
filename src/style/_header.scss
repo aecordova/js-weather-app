@@ -1,21 +1,23 @@
 
-header{
+header {
   background-color: $primary;
   padding: 5px;
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   z-index: 2;
   position: relative;
 }
+
 .errors {
-  position:absolute;
+  position: absolute;
   font-size: xx-small;
   color: red;
   bottom: -30%;
   width: 50%;
   text-align: center;
   right: 0;
-  transition: opacity .5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
+
 .search-frm {
   display: flex;
   padding: 4px 4px;
@@ -23,11 +25,11 @@ header{
   border-radius: 25px;
   border: solid 1px $divider;
   overflow: hidden;
-  transition: opacity .5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .search-inp {
-  font-family: Dosis;
+  font-family: Dosis, sans-serif;
   color: $text-icons;
   background-color: transparent;
   outline: none;
@@ -37,42 +39,10 @@ header{
   font-size: 1em;
 }
 
-.search-inp::placeholder{
+.search-inp::placeholder {
   color: $primary-light;
-  font-family: Dosis;
+  font-family: Dosis, sans-serif;
   font-size: smaller;
-}
-
-.search-inp:hover ~ .search-btn, 
-.search-inp:focus ~ .search-btn,
-.search-btn:hover { 
-  background-color: $divider !important;
-} 
-.form-container{
-  display: flex;
-  justify-content: center;
-}
-.units {
-  display: flex;
-  padding-left: 10px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  .input-group{
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
-    // padding-bottom: 5px;
-  }
-  input[type=radio] {
-    height: .8em;
-    margin: 0;
-    padding: 0;
-  }
-  label{
-    color: $divider;
-    font-size: .6em;
-  }
 }
 
 .search-btn {
@@ -84,20 +54,57 @@ header{
   border: 0;
   background: transparent;
   cursor: pointer;
-  transition: background, .5s ease;
+  transition: background, 0.5s ease;
 }
 
-.search-btn-icon{
+.search-btn:hover,
+.search-inp:hover ~ .search-btn,
+.search-inp:focus ~ .search-btn {
+  background-color: $divider !important;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.units {
+  display: flex;
+  padding-left: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    // padding-bottom: 5px;
+  }
+
+  input[type=radio] {
+    height: 0.8em;
+    margin: 0;
+    padding: 0;
+  }
+
+  label {
+    color: $divider;
+    font-size: 0.6em;
+  }
+}
+
+.search-btn-icon {
   color: $primary;
   height: 2em;
   width: 2em;
 }
 
-
 .expand-search-box {
   text-align: center;
   padding-top: 5px;
   line-height: 15px;
+
   svg {
     height: 20px;
     color: $divider;
@@ -105,18 +112,20 @@ header{
 }
 
 .expand-search {
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .fold {
-  transform: translate(0, -60%)
+  transform: translate(0, -60%);
 }
 
 .rotate {
   transform: rotate(180deg);
 }
 
-.wobble-y:hover, .wobble-y:focus, .wobble-y:active {
+.wobble-y:hover,
+.wobble-y:focus,
+.wobble-y:active {
   -webkit-animation-name: wobble-y;
   animation-name: wobble-y;
   -webkit-animation-duration: 1s;
@@ -127,15 +136,16 @@ header{
   animation-iteration-count: 1;
 }
 
-
 @keyframes wobble-y {
   25% {
-    transform:translateY(-4px);
+    transform: translateY(-4px);
   }
+
   50% {
-    transform:translateY(4px);
+    transform: translateY(4px);
   }
+
   100% {
-    transform:translate(0px);
+    transform: translate(0);
   }
 }
