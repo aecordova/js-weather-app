@@ -30,7 +30,7 @@ const getWeatherData = async (city, units = 'metric') => {
   const data = await fetch(buildRequest(city, units))
     .then((response) => {
       if (!response.ok) {
-        handleError(r);
+        handleError(response);
       }
       return response.json();
     })

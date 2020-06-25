@@ -59,6 +59,39 @@
   box-shadow: 8px 13px 13px -2px rgba(0, 0, 0, 0.4);
 }
 
+.unit-toggle-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.disp-unit-toggle {
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid $primary-dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1em;
+  width: 2em;
+  border-radius: 25px;
+
+  .toggler {
+    font-size: 1em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: absolute;
+    background-color: $primary-dark;
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+.imperial {
+  transform: translateX(100%);
+}
+
 .temp-unit {
   font-family: "Dosis", sans-serif;
   font-weight: 700;

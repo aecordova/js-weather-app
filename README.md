@@ -30,7 +30,7 @@ The purpose of this project is to practice Javascript acquired knowledge by buil
 
 #### Live Version:
 
-You can find a live running version of this app on the following link: [Restaurant Page](https://js-weatherapp.netlify.app/)
+You can find a live running version of this app on the following link: [Weather App](https://js-weatherapp.netlify.app/)
 
 #### Instructions for running on local environment:
 

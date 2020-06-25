@@ -7,6 +7,8 @@ const searchToggle = document.querySelector('.expand-search');
 
 const cityDisplay = document.querySelector('.disp-city');
 const tempDisplay = document.querySelector('.disp-temp');
+const toggler = document.querySelector('.disp-unit-toggle');
+const unitToggle = document.querySelector('.toggler');
 const descDisplay = document.querySelector('.disp-desc');
 const feelsDisplay = document.querySelector('.disp-fls');
 const minDisplay = document.querySelector('.disp-min');
@@ -15,9 +17,10 @@ const wIcon = document.querySelector('.disp-icon');
 const header = document.querySelector('header');
 const welcome = document.querySelector('.welcome');
 const display = document.querySelector('.main-display');
-const fahRadio = document.getElementById('degFah');
 const expand = document.querySelector('.expand-search-box');
 const errorBox = document.querySelector('.errors');
+
+let cityName;
 
 const toggleFoldHeader = () => {
   header.classList.toggle('fold');
@@ -48,7 +51,6 @@ const show = (element) => {
   }
 };
 
-
 const displayWeather = async (city, units) => {
   const w = await getW(city, units);
   if (w.data.status === 'Error') {
@@ -65,17 +67,31 @@ const displayWeather = async (city, units) => {
     minDisplay.textContent = Math.trunc(w.data.temp.temp_min);
     maxDisplay.textContent = Math.trunc(w.data.temp.temp_max);
     wIcon.style.backgroundImage = `url(${w.icon})`;
-    toggleFoldHeader();
     hide(welcome);
     show(display);
   }
 };
 
+const switchUnits = () => {
+  if (unitToggle.dataset.units === 'metric') {
+    unitToggle.dataset.units = 'imperial';
+    unitToggle.classList.add('imperial');
+  } else {
+    unitToggle.dataset.units = 'metric';
+    unitToggle.classList.remove('imperial');
+  }
+  return unitToggle.dataset.units;
+};
+
+toggler.addEventListener('click', () => {
+  displayWeather(cityName, switchUnits());
+});
+
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const cityName = searchInput.value.toLowerCase();
-  const units = fahRadio.checked ? 'imperial' : 'metric';
-  displayWeather(cityName, units);
+  cityName = searchInput.value.toLowerCase();
+  displayWeather(cityName);
+  toggleFoldHeader();
 });
 
 expand.addEventListener('click', () => {
