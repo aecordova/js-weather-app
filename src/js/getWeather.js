@@ -16,11 +16,11 @@ const getIcon = async (iconName) => {
   const icon = await fetch(
     `https://openweathermap.org/img/wn/${iconName}@4x.png`,
   )
-    .then((r) => {
-      if (!r.ok) {
-        handleError(r);
+    .then((response) => {
+      if (!response.ok) {
+        handleError(response);
       }
-      return r.blob();
+      return response.blob();
     })
     .then(URL.createObjectURL);
   return icon;
@@ -28,22 +28,22 @@ const getIcon = async (iconName) => {
 
 const getWeatherData = async (city, units = 'metric') => {
   const data = await fetch(buildRequest(city, units))
-    .then((r) => {
-      if (!r.ok) {
+    .then((response) => {
+      if (!response.ok) {
         handleError(r);
       }
-      return r.json();
+      return response.json();
     })
-    .then((d) => ({
+    .then((respData) => ({
       status: 'OK',
-      city: d.name,
-      country: d.sys.country,
-      weather: d.weather,
-      temp: d.main,
+      city: respData.name,
+      country: respData.sys.country,
+      weather: respData.weather,
+      temp: respData.main,
     }))
-    .catch((e) => ({
+    .catch((error) => ({
       status: 'Error',
-      msg: e.message,
+      msg: error.message,
     }));
 
   let icon = null;
