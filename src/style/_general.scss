@@ -1,0 +1,50 @@
+$background: #000;
+$accent: #ff9800;
+$primary: #673ab7;
+$primary-light: #d1c4e9;
+$primary-dark: #512da8;
+$divider:#bdbdbd;
+$text-icons: #fff;
+$primary-text: #212121;
+$secondary-text: #757575;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: 300px;
+  font-family: 'Dosis', sans-serif;
+  background-color: $primary-light;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 5% 1fr 5%;
+  grid-template-rows: auto 1fr auto;
+}
+
+header,
+footer {
+  grid-column: 1 / -1;
+}
+
+main {
+  grid-column: 2 / 3;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.h-0 {
+  height: 0;
+}
+
+.p-0 {
+  padding: 0;
+}

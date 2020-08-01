@@ -1,0 +1,131 @@
+
+.welcome {
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.main-logo {
+  height: 2em;
+}
+
+.main-display {
+  padding: 10px;
+  transform: translateY(-2.5em);
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+
+.disp {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  max-width: 400px;
+}
+
+.temp-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.disp-temp {
+  color: $primary-text;
+  display: block;
+  font-size: 6rem;
+  line-height: 7rem;
+}
+
+.disp-icon {
+  border-radius: 25px;
+  height: 5rem;
+  width: 6rem;
+  bottom: 0;
+  right: 0;
+  background: rgba($color: #757575, $alpha: 0.8) center center / cover no-repeat;
+  -webkit-box-shadow: 8px 13px 13px -2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 8px 13px 13px -2px rgba(0, 0, 0, 0.4);
+  box-shadow: 8px 13px 13px -2px rgba(0, 0, 0, 0.4);
+}
+
+.unit-toggle-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.disp-unit-toggle {
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid $primary-dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1em;
+  width: 2em;
+  border-radius: 25px;
+
+  .toggler {
+    font-size: 1em;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: absolute;
+    background-color: $primary-dark;
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+.imperial {
+  transform: translateX(100%);
+}
+
+.temp-unit {
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+}
+
+.temp-unit::after {
+  content: "º";
+}
+
+.disp-desc,
+.disp-city {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.disp-stat {
+  display: flex;
+  padding: 10px;
+  border-radius: 25px;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $secondary-text;
+}
+
+.disp-stat > * {
+  display: flex;
+  align-items: center;
+}
+
+.stat-lbl {
+  font-size: small;
+  font-family: "Dosis", sans-serif;
+  margin-right: 5px;
+}
